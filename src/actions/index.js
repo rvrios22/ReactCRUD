@@ -1,4 +1,4 @@
-//add a todo item
+// Add a todo item
 export const addTodo = () => (
     {
         type: 'ADD_TODO'
@@ -23,7 +23,7 @@ export const todoSelected = (id) =>(
 //edit a todo item
 export const applyTodoEdits = (id) => (
     {
-        type: 'TODO_SELECTED',
+        type: 'APPLY_TODO_EDITS',
         id
     }
 )
