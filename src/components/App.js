@@ -1,14 +1,14 @@
 import React from "react";
 import ToDoList from './Todo';
 import { connect } from 'react-redux';
-import { addTodo, todoTextChanged, todoSelected, todoEditTextChanged, applyTodoEdits } from '../actions/index';
+import { addTodo, todoTextChanged, todoSelected, todoEditTextChanged, applyTodoEdits, removeTodo } from '../actions/index';
 
 class App extends React.Component {
     render() {
         return (
             <div>
                 <h3>Todo List:</h3>
-                <ToDoList items={this.props.items} onAddTodo={this.props.onAddTodo} onTodoTextChanged={this.props.onTodoTextChanged} addTodoText={this.props.addTodoText} selectedItem={this.props.selectedTodo} onTodoSelected={this.props.onTodoSelected} onApplyTodoEdit={this.props.onApplyTodoEdit} onTodoEditTextChanged={this.props.onTodoEditTextChanged} editTodoText={this.props.editTodoText}/>
+                <ToDoList items={this.props.items} onAddTodo={this.props.onAddTodo} onTodoTextChanged={this.props.onTodoTextChanged} addTodoText={this.props.addTodoText} selectedItem={this.props.selectedTodo} onTodoSelected={this.props.onTodoSelected} onApplyTodoEdit={this.props.onApplyTodoEdit} onTodoEditTextChanged={this.props.onTodoEditTextChanged} editTodoText={this.props.editTodoText} onRemoveTodo={this.props.onRemoveTodo} removeTodo={this.props.removeTodo}/>
             </div>
         );
     }
@@ -21,7 +21,8 @@ function mapDispatchToProps(dispatch){
         //the following is needed becuase you created three new action creators and they need to be dispatched
         onTodoSelected: id => dispatch(todoSelected(id)),
         onApplyTodoEdit: id => dispatch(applyTodoEdits(id)),
-        onTodoEditTextChanged: text => dispatch(todoEditTextChanged(text))
+        onTodoEditTextChanged: text => dispatch(todoEditTextChanged(text)),
+        onRemoveTodo: id => dispatch(removeTodo(id))
 
     };
 }

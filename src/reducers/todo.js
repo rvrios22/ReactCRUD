@@ -59,6 +59,14 @@ const initialState = {
           ...state,
           editTodoText: action.text
         }
+
+        //this case statement handles when the state when an item is remoed
+      case 'REMOVE_TODO':
+        return{
+          ...state,
+          items: state.items.filter(todo => todo.id !== action.id)
+        };
+
       default:
         return state;
     }
