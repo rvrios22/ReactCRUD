@@ -24,7 +24,7 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state) {
     return {
         items: state.items,
-        addTodoText
+        addTodoText: state.addTodoText
     };
 }
 

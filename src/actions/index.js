@@ -1,3 +1,4 @@
+//add a todo item
 export const addTodo = () => (
     {
         type: 'ADD_TODO'
